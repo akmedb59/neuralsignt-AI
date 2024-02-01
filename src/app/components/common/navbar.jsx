@@ -12,16 +12,16 @@ const Navbar = () => {
       link: "#",
     },
     {
-      title: "About",
-      link: "#",
+      title: "Dashboard",
+      link: "/user/dashboard",
     },
     {
-      title: "Services",
-      link: "#",
+      title: "Reports",
+      link: "/user/reports",
     },
     {
-      title: "How it Works",
-      link: "#",
+      title: "Project Board",
+      link: "/projectview",
     },
     {
       title: "Contact Us",
