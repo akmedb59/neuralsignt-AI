@@ -6,19 +6,25 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+    extend:{
       colors: {
-        bgSlate: "#0b1121",
-        bgSlateLight: "#131a34",
-        bgOrange: "#ee7326",
-        bgGray: "#374151",
+        'btyellow': '#fac713',
+        'btgreen': '#03a580',
+        'bggrey': '#f6f4ff',
+        'btpurple': '#2d194e',
+        'bgdark-grey': '#6B6B6B',
+        'btpink': '#ee3658',
+        'btblue': '#0085fe',
+        'transparent': 'transparent',
+        'nomgrey':'#eff2f9',
+        
+      },
+      fontFamily: {
+        inter: ["'Inter'", "sans-serif"],
+        gelasio: ["'Gelasio'", "serif"]
       },
     },
+   
   },
   plugins: [],
 };

@@ -1,13 +1,11 @@
-import React from "react";
+import React from 'react'
 
-const Button = ({ text, customClass }) => {
+const Button = ({button="Button",action, customClass="text-white bg-black "}) => {
   return (
-    <div className="w-fit p-0.5 bg-gradient-to-tr from-bgOrange via-bgSlateLight to-bgOrange rounded-lg shadow-2xl">
-      <button className={"bg-opacity-60 hover:bg-opacity-90 text-white bg-bgSlate relative rounded-md "+ customClass}>
-        {text}
-      </button>
+    <div className={customClass+' text-sm font-semibold py-3 rounded-full w-56 text-center hover:bg-opacity-90 cursor-pointer'}>
+        <button className='z-50'>{button}</button>
     </div>
-  );
-};
+  )
+}
 
 export default Button;
