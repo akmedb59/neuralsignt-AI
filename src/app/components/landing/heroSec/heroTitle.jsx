@@ -6,7 +6,7 @@ const TeroTitle = () => {
     <div className="py-10 mx-auto w-full md:w-fit">
       <div className="md:flex items-center gap-5">
         <div className="text-4xl lg:text-8xl font-bold tracking-widest">
-          BETTER <span className="text-orange-500">DATA</span>
+          BETTERR <span className="text-orange-500">DATA</span>
         </div>
         <div className="text-left text-lg text-gray-200">
           TOP-PERFORMING <br /> AGENCY
