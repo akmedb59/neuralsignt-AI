@@ -9,7 +9,7 @@ const Hero = () => {
         <div className='bg-btgreen relative w-full h-screen'>
             <div className='2xl:max-w-[1400px] mx-auto flex flex-col items-center px-10 lg:px-36'>
                 <div className='md:w-[40vw] flex flex-col items-center mt-[25vh]'>
-                    <Headers title='Save time working with Appilo Zone' description={dummy} customClass='text-white text-center' />
+                    <Headers title='Save time working with SnipTask' description={dummy} customClass='text-white text-center' />
                     <div className='py-5'>
                         <Button button='Get Started' customClass='bg-btyellow text-black' />
                     </div>

@@ -35,7 +35,7 @@ const AuthForm = () => {
 
 
     return (
-        <div className='flex flex-col items-center px-10 py-5 my-20 md:my-0'>
+        <div className='flex flex-col items-center'>
             <div className='text-xl font-extrabold py-5'>Logo SnipByte</div>
             <div className='grid grid-cols-2 text-center gap-2 bg-green-200 w-full rounded-lg'>
                 <button onClick={() => setFormType("login")} className={(formType === "login" ? "bg-btgreen text-white " : "") + " py-1.5 text-bgdark-grey rounded-lg m-0.5"}>Sign In</button>
@@ -54,7 +54,7 @@ const AuthForm = () => {
                     {formType === "register" ?
                         <Input type='password' placeholder='Confirm Password' label={"Confirm Password"} formType={formType} name={"confirmpassword"} register={register} err={errors} />
                         : null}
-                    <Button button={formType === "register" ? "Create Account" : "Sign In"} type="submit" customClass='w-full bg-btgreen rounded-lg text-white' />
+                    <Button  button={formType === "register" ? "Create Account" : "Sign In"} type="submit" customClass='w-full bg-btgreen rounded-lg text-white' />
                 </form>
             </div>
             <div className='flex items-center justify-center py-6 w-full'>

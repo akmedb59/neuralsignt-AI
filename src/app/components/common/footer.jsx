@@ -53,7 +53,7 @@ const Footer = () => {
                 <div className='md:flex items-start justify-between w-full gap-10'>
                     <div className='flex flex-col items-start space-y-10 w-full md:w-2/4'>
                         <div className='text-xl font-extrabold text-btgreen'>
-                            Logo Lorem
+                            Snip Task
                         </div>
                         <div className='text-sm text-bgdark-grey'>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi eligendi molestiae consectetur numquam. Quas perspiciatis adipisci quod blanditiis earum perferendis ratione quaerat, quidem vitae nesciunt quam vero quo aperiam esse.

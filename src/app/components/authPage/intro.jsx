@@ -1,26 +1,36 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react";
 
 const Intro = () => {
-    return (
-        <div className='relative h-full w-full rounded-xl overflow-hidden'>
-            <div className='absolute w-full h-full -z-50'>
-                <Image alt='SnipByte' src='/auth-bg.svg' height={"1000"} width={"1000"} className='object-cover w-full h-full' />
-            </div>
-            <div className='flex flex-col items-center justify-between h-full text-center text-white py-10 px-20'>
-                <div>
-                    <div className='font-extrabold text-3xl whitespace-nowrap'>Welcome to SnipByte</div>
-                    <div className='text-sm font-light'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                </div>
-                <div>
-                    <div className='font-semibold text-2xl whitespace-nowrap'>Welcome to SnipByte</div>
-                    <div className='text-sm font-light'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                </div>
-
-            </div>
-
+  return (
+    <div
+      className="relative h-full w-full overflow-hidden rounded-xl"
+      style={{
+        backgroundImage: "url('/auth-bg.svg')", // replace with your image path
+        backgroundSize: "cover", // cover the entire div
+        backgroundRepeat: "no-repeat", // don't repeat the image
+        backgroundPosition: "center", // center the image
+      }}
+    >
+      <div className="z-50 flex h-full flex-col items-center justify-between px-20 py-10 text-center text-white">
+        <div>
+          <div className="whitespace-nowrap text-3xl font-extrabold">
+            Welcome to SnipByte
+          </div>
+          <div className="text-sm font-light">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </div>
         </div>
-    )
-}
+        <div>
+          <div className="whitespace-nowrap text-2xl font-semibold">
+            Welcome to SnipByte
+          </div>
+          <div className="text-sm font-light">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Intro
+export default Intro;
