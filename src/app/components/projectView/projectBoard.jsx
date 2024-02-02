@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Column from "./column";
 import ProjectCard from "./projectCard";
 import { projects } from "../common/tempdata";
+import ProjectDetailsModal from "./projectDetailsModal";
+import AddProjectModal from "./addProjectModal";
 
 import {
   DndContext,
@@ -25,12 +27,14 @@ import {
   useDragHandlers,
   findValueOfItems,
 } from "./customHook/useDragHandlers";
-import AddProjectModal from "./addProjectModal";
+
 
 const ProjectBoard = () => {
   const [containers, setContainers] = useState(projects);
   const [activeId, setActiveId] = useState(null);
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [addModalIsOpen, setIsAddOpen] = useState(false);
+  const [modalDetailsOpen, setDetailsOpen] = useState(false);
+
   // Custom Hook for DND Handlers
   const [handleDragStart, handleDragMove, handleDragEnd] = useDragHandlers(
     containers,
@@ -46,7 +50,6 @@ const ProjectBoard = () => {
       coordinateGetter: sortableKeyboardCoordinates,
     }),
   );
-
 
   // Modal Styles
   const customStyles = {
@@ -66,17 +69,18 @@ const ProjectBoard = () => {
   // }
 
   function closeModal() {
-    setIsOpen(false);
+    setIsAddOpen(false);
+    setDetailsOpen(false);
   }
-
-
-
-
 
   return (
     <div className="mx-auto w-full px-10 py-5 lg:px-36 2xl:max-w-[1400px]">
       <div>
-        <AddProjectModal modalIsOpen={modalIsOpen} closeModal={closeModal} />
+        <AddProjectModal modalIsOpen={addModalIsOpen} closeModal={closeModal} />
+        <ProjectDetailsModal
+          modalIsOpen={modalDetailsOpen}
+          closeModal={closeModal}
+        />
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
@@ -94,7 +98,7 @@ const ProjectBoard = () => {
                 title={container.categorty}
                 id={container.id}
                 size={container.projects.length}
-                openModal={setIsOpen}
+                openModal={setIsAddOpen}
                 // isOpenModal={modalIsOpen}
               >
                 <SortableContext items={container.projects.map((i) => i.id)}>
@@ -104,7 +108,7 @@ const ProjectBoard = () => {
                         key={proj.id}
                         id={proj.id}
                         project={proj}
-                        openModal={setIsOpen}
+                        openModal={setDetailsOpen}
                         // isOpenModal={modalIsOpen}
                       />
                     ))}

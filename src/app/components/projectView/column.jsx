@@ -38,7 +38,7 @@ const Column = ({
   // };
   return (
     <div
-      {...attributes}
+      // {...attributes}
       ref={setNodeRef}
       style={{
         transition,
@@ -47,7 +47,7 @@ const Column = ({
       className="flex w-full cursor-default flex-col gap-5 rounded-lg border bg-white"
     >
       <div
-        {...listeners}
+        // {...listeners}
         className="m-5 flex cursor-move items-center justify-between px-2 py-4"
       >
         <div className="flex items-center gap-2">

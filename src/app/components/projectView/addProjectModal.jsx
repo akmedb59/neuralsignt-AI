@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import Input from "../common/input";
 import Select from "react-select";
 import Button from "../common/button";
+import { IoClose } from "react-icons/io5";
 
 const AddProjectModal = ({ modalIsOpen, closeModal }) => {
   // Modal Styles
@@ -63,7 +64,9 @@ const AddProjectModal = ({ modalIsOpen, closeModal }) => {
       >
         <div className="relative">
           <div className="absolute right-0 top-0">
-            <button onClick={closeModal}>X</button>
+            <button onClick={closeModal}>
+              <IoClose />
+            </button>
           </div>
           <div className="pb-5 text-lg font-semibold">Project Details</div>
         </div>
