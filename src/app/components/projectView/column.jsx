@@ -32,10 +32,10 @@ const Column = ({
     },
   });
 
-  const opennModal = () => {
-    openModal(true);
-    console.log("open");
-  };
+  // const opennModal = () => {
+  //   openModal(true);
+  //   console.log("open");
+  // };
   return (
     <div
       {...attributes}
@@ -64,7 +64,7 @@ const Column = ({
       {/* {openButton} */}
       <div className="w-full p-5">
         <button
-          onClick={opennModal}
+          onClick={()=>openModal(true)}
           className="flex w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-btpurple bg-purple-50 py-3 text-btpurple"
         >
           <FaPlus />
