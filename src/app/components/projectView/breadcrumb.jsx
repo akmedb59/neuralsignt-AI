@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { GrNext } from "react-icons/gr";
 import ProfilesArray from "../common/profilesArray";
 import { profiles } from "../common/tempdata";
@@ -8,10 +9,18 @@ import { MdOutlineTableRows } from "react-icons/md";
 import { FaTableCellsLarge } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoFilterSharp } from "react-icons/io5";
+import AddDeveloperModal from "./addDeveloperModal";
 
 const Breadcrumb = () => {
+  const [addModalIsOpen, setAddModalIsOpen] = useState(false);
+
+  const closeModal = () => {
+    setAddModalIsOpen(false);
+  };
+
   return (
     <div className="mx-auto w-full px-10 py-5 lg:px-36 2xl:max-w-[1400px]">
+      <AddDeveloperModal modalIsOpen={addModalIsOpen} closeModal={closeModal} />{" "}
       <div className="flex flex-wrap items-center justify-between space-y-5 pb-5 sm:space-y-0">
         <div className="flex items-center gap-3 text-2xl">
           Project{" "}
@@ -26,10 +35,12 @@ const Breadcrumb = () => {
             showadd={false}
             css={" h-12 w-12 bg-btyellow "}
           />
-          <Button
-            button={"+ Add Member"}
-            customClass="bg-btpurple text-white text-sm rounded-lg w-fit px-5"
-          />
+          <div onClick={() => setAddModalIsOpen(true)}>
+            <Button
+              button={"+ Add Member"}
+              customClass="bg-btpurple text-white text-sm rounded-lg w-fit px-5"
+            />
+          </div>
         </div>
       </div>
       <div className="flex flex-wrap items-center justify-between space-y-5 sm:space-y-0">

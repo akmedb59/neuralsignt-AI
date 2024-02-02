@@ -76,7 +76,9 @@ const ProjectBoard = () => {
   return (
     <div className="mx-auto w-full px-10 py-5 lg:px-36 2xl:max-w-[1400px]">
       <div>
-        <AddProjectModal modalIsOpen={addModalIsOpen} closeModal={closeModal} />
+        <AddProjectModal 
+        modalIsOpen={addModalIsOpen} 
+        closeModal={closeModal} />
         <ProjectDetailsModal
           modalIsOpen={modalDetailsOpen}
           closeModal={closeModal}
