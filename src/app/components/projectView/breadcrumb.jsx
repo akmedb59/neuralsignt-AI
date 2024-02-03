@@ -23,10 +23,10 @@ const Breadcrumb = () => {
       <AddDeveloperModal modalIsOpen={addModalIsOpen} closeModal={closeModal} />{" "}
       <div className="flex flex-wrap items-center justify-between space-y-5 pb-5 sm:space-y-0">
         <div className="flex items-center gap-3 text-2xl">
-          Project{" "}
+          Project
           <span className="text-xl">
             <GrNext />
-          </span>{" "}
+          </span>
           BoardView
         </div>
         <div className="flex flex-wrap items-center gap-2 space-y-5 sm:space-y-0">
