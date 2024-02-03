@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-const ProfilesArray = ({ profiles, showadd=true, css }) => {
+const ProfilesArray = ({ profiles, showadd=true, css, lastIcon }) => {
 
 
   const profilesList = profiles.map((profile, index) => {
@@ -9,11 +9,20 @@ const ProfilesArray = ({ profiles, showadd=true, css }) => {
     )
   })
   return (
-    <div className='flex'>
+    <div className="flex">
       {profilesList}
-      {showadd? <div className='text-center p-1 w-[50px] h-[50px] rounded-full bg-btyellow border-2 border-white text-white text-3xl aspect-square -ml-3'>+</div> :null}
+      {showadd ? (
+        <div
+          className={
+            "-ml-3 aspect-square rounded-full border-2 border-white p-1 text-center text-white flex items-center justify-center" +
+            css
+          }
+        >
+          {lastIcon}
+        </div>
+      ) : null}
     </div>
-  )
+  );
 }
 
 export default ProfilesArray;
