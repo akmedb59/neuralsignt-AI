@@ -70,7 +70,7 @@ const AddTasksModal = ({ modalIsOpen, closeModal }) => {
             </button>
           </div>
           <div className="py-5">
-            <div className="text-lg font-semibold">Project Details</div>
+            <div className="text-lg font-semibold">Task Details</div>
             <p className="text-sm text-gray-600">
               Welcome! Create a new task to get started.
             </p>
