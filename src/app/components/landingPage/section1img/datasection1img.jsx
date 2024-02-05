@@ -96,7 +96,7 @@ const Datasection1img = () => {
   };
 
   return (
-    <div className="mb-20 max-w-[500px] px-5 py-20 md:mb-0 md:px-0 md:py-0">
+    <div className="mb-20 md:max-w-[500px] px-5 py-20 md:mb-0 md:px-0 md:py-0">
       <div className="relative">
         <svg
           className="-z-50"
@@ -158,7 +158,7 @@ const Datasection1img = () => {
               <div className="text-xs font-light">January 4th</div>
             </div>
           </div>
-          <div className="mt-16 text-2xl">
+          <div className="mt-16 text-2xl hidden md:block">
             <span className="text-xs">$</span>234,000
           </div>
         </div>

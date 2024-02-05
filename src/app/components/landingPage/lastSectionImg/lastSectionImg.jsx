@@ -57,18 +57,18 @@ const Lastsectionimg = () => {
 
     return (
         <>
-            <div className='p-5 relative my-10 md:my-0'>
-                <div className='h-full w-full bg-[#fcfbff] p-5 shadow-lg rounded-lg '>
+            <div className='relative my-10 md:my-0'>
+                <div className='h-full w-full bg-[#fcfbff] p-2 lg:p-5 shadow-lg rounded-lg '>
                     <div className='font-semibold text-sm'>Total Work</div>
                     <ApexCharts options={options} series={series} type="bar" height={200} />
                 </div>
-                <div className='absolute -top-2 left-32'>
+                <div className='absolute -top-2  right-0 z-50'>
                     <StatsCard icon={<SiMinutemailer />} data={"200"} dataType={"Work"} percent={"70.86"} status={"profit"}/>
                 </div>
-                <div className='absolute bottom-36 -right-5'>
+                <div className='absolute bottom-36 mx-auto md:ml-24'>
                     <StatsCard icon={<SiMinutemailer />} data={"200"} dataType={"Work"} percent={"70.86"} status={"loss"}/>
                 </div>
-                <div className='absolute -bottom-5 -left-5'>
+                <div className='absolute -bottom-5 left-0'>
                     <StatsCard icon={<SiMinutemailer />} data={"200"} dataType={"Work"} percent={"70.86"} status={"profit"}/>
                 </div>
             </div>

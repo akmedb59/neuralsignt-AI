@@ -5,7 +5,7 @@ const Breadcrumb = ({ setmodalIsOpen, isAdmin }) => {
   return (
     <div className="border-b py-10">
       <div className="flex items-center justify-between">
-        <div className="flex items-baseline gap-2">
+        <div className="flex flex-col md:flex-row items-baseline gap-2">
           <h1 className="text-2xl font-bold">Tasks</h1>
           <span className="text-sm text-gray-600">Showing All</span>
         </div>
