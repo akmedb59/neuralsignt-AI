@@ -5,7 +5,7 @@ import TeamCard from "../cards/teamCard";
 const TeamsSection = () => {
   return (
     <div className="rounded-xl border bg-bggrey p-5">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between pb-4">
         <p className="text-sm font-bold">My Team</p>
         <div>
           <PiDotsThreeOutlineDuotone />

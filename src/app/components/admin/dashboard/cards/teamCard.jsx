@@ -6,12 +6,12 @@ import { profiles } from "@/app/components/common/tempdata";
 const TeamCard = () => {
   return (
     <div className="rounded-xl bg-white p-5 shadow-md space-y-3">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between ">
         <div className="flex items-center justify-between gap-2">
           <div className="rounded-xl border-2 p-2">
             <PiLightningABold />
           </div>
-          <p className="text-sm font-semibold">Team Name</p>
+          <p className="text-sm font-bold">Team Name</p>
         </div>
         <div>
           <BsThreeDotsVertical />
