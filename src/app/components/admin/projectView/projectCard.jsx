@@ -4,7 +4,7 @@ import { IoCalendarOutline } from "react-icons/io5";
 import Image from "next/image";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import ProjectCategory from "../common/projectCategory";
+import ProjectCategory from "../../common/projectCategory";
 import Modal from "react-modal";
 import { BsThreeDots } from "react-icons/bs";
 
@@ -61,14 +61,17 @@ const ProjectCard = ({
         transform: CSS.Translate.toString(transform),
       }}
       className={
-        "relative w-full space-y-3 rounded-md border-2 bg-white p-5 cursor-default " +
+        "relative w-full cursor-default space-y-3 rounded-md border-2 bg-white p-5 " +
         (isDragging ? " opacity-50 shadow-lg" : "")
       }
     >
-      <div className="absolute right-5 cursor-pointer " onClick={() => openModal(true)}>
+      <div
+        className="absolute right-5 cursor-pointer "
+        onClick={() => openModal(true)}
+      >
         <BsThreeDots />
       </div>
-      <div {...listeners} className="w-full space-y-3 cursor-grabbing">
+      <div {...listeners} className="w-full cursor-grabbing space-y-3">
         <div className="flex items-center gap-2">{types}</div>
         <div className="mt-3 text-xl font-semibold">{title}</div>
         <div className="flex items-center gap-2 text-sm text-bgdark-grey">

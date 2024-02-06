@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Column from "./column";
 import ProjectCard from "./projectCard";
-import { projects } from "../common/tempdata";
+import { projects } from "../../common/tempdata";
 import ProjectDetailsModal from "./projectDetailsModal";
 import AddProjectModal from "./addProjectModal";
 
@@ -21,13 +21,12 @@ import {
   // arrayMove, imported in custom hook
   sortableKeyboardCoordinates,
 } from "@dnd-kit/sortable";
-import Button from "../common/button";
+import Button from "../../common/button";
 
 import {
   useDragHandlers,
   findValueOfItems,
 } from "./customHook/useDragHandlers";
-
 
 const ProjectBoard = () => {
   const [containers, setContainers] = useState(projects);
@@ -76,9 +75,7 @@ const ProjectBoard = () => {
   return (
     <div className="mx-auto w-full px-10 py-5 lg:px-36 2xl:max-w-[1400px]">
       <div>
-        <AddProjectModal 
-        modalIsOpen={addModalIsOpen} 
-        closeModal={closeModal} />
+        <AddProjectModal modalIsOpen={addModalIsOpen} closeModal={closeModal} />
         <ProjectDetailsModal
           modalIsOpen={modalDetailsOpen}
           closeModal={closeModal}

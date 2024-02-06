@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import Input from "../common/input";
+import Input from "../../common/input";
 import Select from "react-select";
-import Button from "../common/button";
+import Button from "../../common/button";
 import { IoClose } from "react-icons/io5";
 
 const AddDeveloperModal = ({ modalIsOpen, closeModal }) => {
@@ -90,7 +90,6 @@ const AddDeveloperModal = ({ modalIsOpen, closeModal }) => {
             <Input label="Due Date" type="date" placeholder="none" />
           </div> */}
 
-          
           <div className="pt-5">
             <Button
               button={"Add Developer"}

@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { GrNext } from "react-icons/gr";
-import ProfilesArray from "../common/profilesArray";
-import { profiles } from "../common/tempdata";
-import Button from "../common/button";
+import ProfilesArray from "../../common/profilesArray";
+import { profiles } from "../../common/tempdata";
+import Button from "../../common/button";
 import { VscLayoutSidebarLeftOff } from "react-icons/vsc";
 import { MdOutlineTableRows } from "react-icons/md";
 import { FaTableCellsLarge } from "react-icons/fa6";

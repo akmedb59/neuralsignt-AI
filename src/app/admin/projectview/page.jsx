@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import Header from "../../components/projectView/header";
-import Breadcrumb from "../../components/projectView/breadcrumb";
-import ProjectBoard from "../../components/projectView/projectBoard";
+import Header from "../../components/admin/projectView/header";
+import Breadcrumb from "../../components/admin/projectView/breadcrumb";
+import ProjectBoard from "../../components/admin/projectView/projectBoard";
 
 const Page = () => {
   return (
