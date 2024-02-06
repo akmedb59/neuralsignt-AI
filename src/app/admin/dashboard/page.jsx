@@ -1,9 +1,12 @@
-import React from 'react'
+import StatusSection from "@/app/components/admin/dashboard/sections/statusSection";
+import React from "react";
 
 const Page = () => {
   return (
-    <div>Page</div>
-  )
-}
+    <div>
+      <StatusSection />
+    </div>
+  );
+};
 
-export default Page
+export default Page;
