@@ -12,7 +12,7 @@ const RecentProjectsSec = () => {
           <PiDotsThreeOutlineDuotone />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid md:grid-cols-3 gap-3">
         <ProjectCard />
         <ProjectCard />
         <div className="flex h-full w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed bg-white p-3">

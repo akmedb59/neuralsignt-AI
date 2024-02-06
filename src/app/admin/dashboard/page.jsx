@@ -19,7 +19,7 @@ const Page = () => {
           <RecentProjectsSec />
         </div>
       </div>
-      <div className="col-span-1 grid md:grid-cols-2 gap-5">
+      <div className="col-span-1 grid md:grid-cols-2 lg:grid-cols-1 gap-5">
         <div>
           <MessagesSec />
         </div>
