@@ -6,7 +6,7 @@ import ProgressCard from "../cards/progressCard";
 
 const StatusSection = () => {
   return (
-    <div className="bg-gray-100 p-20">
+    <div className="bg-gray-100">
       <div className="grid grid-cols-2 gap-4">
         <div className="grid grid-cols-2 gap-4">
           <div className="grid grid-rows-12 gap-4">

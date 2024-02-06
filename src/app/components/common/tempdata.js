@@ -12,15 +12,6 @@ export const profiles = {
     {
       img: "/1.webp",
     },
-    {
-      img: "/1.webp",
-    },
-    {
-      img: "/1.webp",
-    },
-    {
-      img: "/1.webp",
-    },
   ],
 };
 
