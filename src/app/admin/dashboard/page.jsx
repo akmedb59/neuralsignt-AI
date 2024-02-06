@@ -7,8 +7,8 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="grid grid-cols-3 p-5 lg:p-10 gap-5">
-      <div className="col-span-2 grid gap-5">
+    <div className="grid grid-cols-1 lg:grid-cols-3 p-5 lg:p-10 gap-5">
+      <div className=" lg:col-span-2 grid gap-5">
         <div>
           <StatusSection />
         </div>
@@ -19,11 +19,11 @@ const Page = () => {
           <RecentProjectsSec />
         </div>
       </div>
-      <div className="col-span-1 grid gap-5">
+      <div className="col-span-1 grid md:grid-cols-2 gap-5">
         <div>
           <MessagesSec />
         </div>
-        <div>
+        <div className="grow">
           <CompletedPSec />
         </div>
       </div>
