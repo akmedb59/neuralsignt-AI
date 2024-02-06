@@ -14,7 +14,7 @@ const StatusSection = () => {
               <StatusCard
                 title={"Ongoing"}
                 tasks={11}
-                allign={"left"}
+                allign={"right"}
                 customClass={"bg-btgreen text-white"}
                 icon={<RiSettings6Line />}
               />
@@ -24,7 +24,7 @@ const StatusSection = () => {
                 title={"Ongoing"}
                 tasks={11}
                 allign={"left"}
-                customClass={"bg-btgreen text-white"}
+                customClass={"bg-btpink text-white"}
                 icon={<RiSettings6Line />}
               />
             </div>
@@ -35,7 +35,7 @@ const StatusSection = () => {
                 title={"Ongoing"}
                 tasks={11}
                 allign={"left"}
-                customClass={"bg-btgreen text-white"}
+                customClass={"bg-btyellow text-white"}
                 icon={<RiSettings6Line />}
               />
             </div>
@@ -44,7 +44,7 @@ const StatusSection = () => {
                 title={"Ongoing"}
                 tasks={11}
                 allign={"left"}
-                customClass={"bg-btgreen text-white"}
+                customClass={"bg-btblue text-white"}
                 icon={<RiSettings6Line />}
               />
             </div>
