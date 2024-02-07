@@ -19,13 +19,13 @@ const Page = () => {
           Welcome to your dashboard
         </div>
       </div>
-      <div className="items-start gap-5 space-y-5 md:flex md:space-y-0">
-        <div className="space-y-4 md:w-[75%]">
-          <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-2 h-fit ">
+      <div className="items-start gap-5 space-y-5 lg:flex md:space-y-0">
+        <div className="space-y-4 lg:w-[75%]">
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="md:col-span-2 h-fit ">
               <ActivityGraph />
             </div>
-            <div className="col-span-1 flex flex-col gap-4">
+            <div className="md:col-span-1 flex flex-col gap-4">
               <div className="">
                 <InboxCard />
               </div>
@@ -52,7 +52,7 @@ const Page = () => {
             <CurrentAssignments />
           </div>
         </div>
-        <div className="space-y-4 md:w-[25%]">
+        <div className="space-y-4 lg:w-[25%] py-4 lg:py-0">
           <div>
             <PercentageCard achieved={30} dataType={"Pending Tasks"} />
           </div>
