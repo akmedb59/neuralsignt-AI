@@ -16,7 +16,7 @@ const ProgressCard = () => {
           activeColor={"yellow"}
           passiveColor={"bg-gray-600"}
           bg={"bg-btpurple text-white"}
-          size={150}
+          // size={150}
         />
       </div>
     </div>

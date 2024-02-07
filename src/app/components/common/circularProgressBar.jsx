@@ -6,7 +6,7 @@ const CircularProgressBar = ({
   activeColor,
   bg = "bg-white",
   passiveColor = "bg-gray-100",
-  size = 130,
+  size = 140,
   stroke = 15,
 }) => {
   const activeSize = size - 2 * stroke;
