@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { RiDeleteBin6Fill } from "react-icons/ri";
-
+import Link from "next/link";
 const MemberCard = () => {
   return (
     <tr className="border-b text-xs">
@@ -33,6 +33,11 @@ const MemberCard = () => {
             <option value="member">Member</option>
           </select>
         </div>
+      </td>
+      <td>
+        <Link href={"/admin/userprofile/user-1"} className="hover:underline">
+          Details
+        </Link>
       </td>
       <td className="w-fit">
         <div className="text-base">
