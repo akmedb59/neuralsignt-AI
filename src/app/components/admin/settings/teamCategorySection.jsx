@@ -4,7 +4,7 @@ import MembersList from "./membersList";
 
 const TeamCategorySection = () => {
   return (
-    <div className="flex flex-col items-start justify-between gap-5 py-5 md:flex-row lg:gap-10">
+    <div className="flex flex-col items-start justify-between gap-5 py-8 border-b md:flex-row lg:gap-10">
       <div className="w-1/3 space-y-5">
         <h2 className="text-xl font-bold">Team Categories</h2>
         <p className="text-sm text-gray-500">
