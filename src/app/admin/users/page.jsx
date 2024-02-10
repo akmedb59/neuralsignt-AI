@@ -1,4 +1,4 @@
-import UsersPagination from "@/app/components/admin/users/UsersPagination";
+import UsersPagination from "@/app/components/admin/users/usersPagination";
 import UserDetailCard from "@/app/components/admin/users/userDetailCard";
 import UsersListBreadCrumb from "@/app/components/admin/users/usersListBreadCrumb";
 import React from "react";
