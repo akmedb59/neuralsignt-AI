@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Profile from "@/app/components/admin/userprofile/profile/profile";
 import Calander from "@/app/components/admin/userprofile/calander/calander";
-
+import Chatbox from "@/app/components/admin/userprofile/chat/chatbox";
 const Page = () => {
   const [activeTab, setActiveTab] = useState("profile");
   return (
@@ -58,7 +58,7 @@ const Page = () => {
         ) : activeTab === "calanderTab" ? (
           <Calander />
         ) : activeTab === "contact" ? (
-          "contact"
+          <Chatbox />
         ) : (
           "null"
         )}
