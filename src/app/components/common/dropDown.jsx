@@ -6,29 +6,32 @@ const DropDown = ({
   options = ["option1", "option2", "option3"],
 }) => {
   return (
-    <div className="relative w-full py-1">
+    <div className="w-full min-w-fit py-1">
       <label
         htmlFor="genderselect"
         className="flex justify-between text-xs font-semibold capitalize"
       >
         {label}
       </label>
-      <select
-        name="genderselect"
-        id=""
-        className="w-full appearance-none rounded-lg border border-gray-200 px-2 py-3 text-sm text-gray-400 outline-none"
-      >
-        <option value="" selected>
-          {placeholder}
-        </option>
-        {options.map((option, index) => (
-          <option key={index} value={option}>
-            {option}
+      <div className="relative">
+        <select
+          name="genderselect"
+          id=""
+          className="w-full appearance-none rounded-lg border border-gray-200 px-2 py-3 pr-8 text-sm text-gray-400 outline-none"
+          defaultValue={placeholder}
+        >
+          <option value={placeholder} disabled>
+            {placeholder}
           </option>
-        ))}
-      </select>
-      <div className="pointer-events-none absolute inset-y-1/2 right-0 px-2 text-gray-400">
-        <IoIosArrowDown />
+          {options.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+        <div className="pointer-events-none absolute bottom-0 right-0 top-0 flex items-center justify-center px-2 text-gray-400">
+          <IoIosArrowDown />
+        </div>
       </div>
     </div>
   );

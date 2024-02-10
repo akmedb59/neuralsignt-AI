@@ -1,6 +1,7 @@
 "use client";
 import CategoriesList from "@/app/components/admin/settings/members/categoriesList";
 import MemberSettings from "@/app/components/admin/settings/profileEdit/memberSettings";
+import Searchbox from "@/app/components/common/searchbox";
 import React, { useState } from "react";
 import { IoMdSettings } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
@@ -16,29 +17,23 @@ const Page = () => {
           </div>
           <div className="text-xl font-bold text-btpurple">Settings</div>
         </div>
-        <div className="flex items-center rounded-lg bg-bggrey px-3 py-2">
-          <IoSearch />
-
-          <input
-            type="text"
-            className="bg-transparent pl-3 outline-none"
-            placeholder="Search Settings"
-          />
-        </div>
+        <Searchbox placeholder="Search settings" />
       </div>
       <div className="flex items-center gap-10 border-b text-sm font-semibold">
         <div
-          className={"cursor-pointer py-2 "+(
-            activeTab === "personal" ? " border-b border-black " : ""
-          )}
+          className={
+            "cursor-pointer py-2 " +
+            (activeTab === "personal" ? " border-b border-black " : "")
+          }
           onClick={() => setActiveTab("personal")}
         >
           Personal
         </div>
         <div
-          className={"cursor-pointer py-2 "+(
-            activeTab === "members" ? " border-b border-black " : ""
-          )}
+          className={
+            "cursor-pointer py-2 " +
+            (activeTab === "members" ? " border-b border-black " : "")
+          }
           onClick={() => setActiveTab("members")}
         >
           Members
