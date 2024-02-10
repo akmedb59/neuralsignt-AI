@@ -9,28 +9,28 @@ import { FaBars } from "react-icons/fa";
 const UsersListBreadCrumb = () => {
   return (
     <div>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-center justify-between gap-5 md:flex-row">
         <div className="flex items-center gap-3 overflow-hidden rounded-lg bg-btpurple bg-opacity-10">
           <UserStatusIcon title="Active" icon={<FaPaperclip />} number="200" />
           <UserStatusIcon title="Active" icon={<FaPaperclip />} number="200" />
           <UserStatusIcon title="Active" icon={<FaPaperclip />} number="200" />
           <UserStatusIcon title="Active" icon={<FaPaperclip />} number="200" />
         </div>
-        <div className="flex items-center gap-5">
+        <div className="flex flex-col items-center gap-5 md:flex-row">
           <Button button="Register time away" />
           <Button
             button="Add new employee"
-            customClass="bg-btgreen text-white "
+            customClass="bg-btpurple text-white "
           />
         </div>
       </div>
       <hr className="my-5" />
-      <div className="flex items-center justify-between rounded-lg bg-btpurple bg-opacity-10 px-3 py-2">
-        <div className="flex items-center gap-5">
+      <div className="flex flex-col items-center justify-between gap-5 rounded-lg bg-btpurple bg-opacity-10 px-3 py-5 md:py-2 md:flex-row">
+        <div className="flex flex-col items-center gap-5 md:flex-row">
           <Searchbox placeholder="Search users" />
           <DropDown placeholder="Position" />
         </div>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center  gap-5">
           <div className="flex items-center gap-5">
             Sort By{" "}
             <input
