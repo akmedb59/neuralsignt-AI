@@ -1,8 +1,12 @@
-import TeamCategorySection from "@/app/components/admin/settings/teamCategorySection";
-import React from 'react'
+"use client";
+import CategoriesList from "@/app/components/admin/settings/members/categoriesList";
+import MemberSettings from "@/app/components/admin/settings/profileEdit/memberSettings";
+import React, { useState } from "react";
 import { IoMdSettings } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 const Page = () => {
+  const [activeTab, setActiveTab] = useState("personal");
+
   return (
     <div className="px-20">
       <div className="flex items-center justify-between py-5">
@@ -12,22 +16,37 @@ const Page = () => {
           </div>
           <div className="text-xl font-bold text-btpurple">Settings</div>
         </div>
-        <div className="flex items-center rounded-lg bg-bggrey py-2 px-3">
-         
-            <IoSearch />
-          
-          <input type="text" className="bg-transparent outline-none pl-3" placeholder="Search Settings"/>
+        <div className="flex items-center rounded-lg bg-bggrey px-3 py-2">
+          <IoSearch />
+
+          <input
+            type="text"
+            className="bg-transparent pl-3 outline-none"
+            placeholder="Search Settings"
+          />
         </div>
       </div>
       <div className="flex items-center gap-10 border-b text-sm font-semibold">
-        <div className="py-2">Personal</div>
-        <div className="border-b border-black py-2">Members</div>
+        <div
+          className={"cursor-pointer py-2 "+(
+            activeTab === "personal" ? " border-b border-black " : ""
+          )}
+          onClick={() => setActiveTab("personal")}
+        >
+          Personal
+        </div>
+        <div
+          className={"cursor-pointer py-2 "+(
+            activeTab === "members" ? " border-b border-black " : ""
+          )}
+          onClick={() => setActiveTab("members")}
+        >
+          Members
+        </div>
       </div>
-      <TeamCategorySection />
-      <TeamCategorySection />
-      <TeamCategorySection />
+      {activeTab === "personal" ? <MemberSettings /> : <CategoriesList />}
     </div>
   );
-}
+};
 
-export default Page
+export default Page;
