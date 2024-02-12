@@ -4,6 +4,9 @@ const DropDown = ({
   label,
   placeholder,
   options = ["option1", "option2", "option3"],
+  register,
+  name,
+  err = "none",
 }) => {
   return (
     <div className="flex w-full min-w-fit flex-col gap-1 py-1">
@@ -15,9 +18,13 @@ const DropDown = ({
       </label>
       <div className="relative">
         <select
-          name="genderselect"
+          name={name ? name : "selectOption"}
+          {...(register ? register(name) : null)}
           id=""
-          className="w-full appearance-none rounded-lg border border-gray-200 px-2 py-3 pr-8 text-sm text-gray-400 outline-none"
+          className={
+            "w-full appearance-none rounded-lg border border-gray-200 px-2 py-3 pr-8 text-sm text-gray-400 outline-none " +
+            (err && err[name] ? "border-none outline-btpink" : "")
+          }
           defaultValue={placeholder}
         >
           <option value={placeholder} disabled>

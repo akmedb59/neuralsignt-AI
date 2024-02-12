@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
 import Input from "./input";
 import Select from "react-select";
 import Button from "./button";
 import { IoClose } from "react-icons/io5";
+import { useForm, Controller } from "react-hook-form";
 
 const AddDeveloperModal = ({ modalIsOpen, closeModal }) => {
   // Modal Styles
@@ -52,7 +53,18 @@ const AddDeveloperModal = ({ modalIsOpen, closeModal }) => {
   };
 
   Modal.setAppElement("body");
-  const [selectedOption, setSelectedOption] = useState(null);
+
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    closeModal();
+  };
+
   return (
     <div>
       <Modal
@@ -71,29 +83,38 @@ const AddDeveloperModal = ({ modalIsOpen, closeModal }) => {
           <div className="pb-5 text-lg font-semibold">Add Developer</div>
         </div>
 
-        <form className="w-[300px]">
-          {/* <Input label="Title" type="text" placeholder="Enter Project Title" /> */}
+        <form className="w-[300px]" onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="categories" className="text-xs font-semibold">
             Add Developer
           </label>
-          <Select
-            defaultValue={selectedOption}
-            onChange={setSelectedOption}
-            options={mltoptions}
-            isMulti={true}
-            styles={optionsStyle}
-            className="mb-3 rounded-lg shadow-sm"
+
+          <Controller
+            name="selectedDevelopers"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <Select
+                {...field}
+                options={mltoptions}
+                isMulti={true}
+                styles={optionsStyle}
+                className="mb-3 rounded-lg shadow-sm"
+              />
+            )}
           />
+          {errors.selectedDevelopers && (
+            <p className="text-xs text-btpink">
+              Please select at least one developer.
+            </p>
+          )}
 
           <Input label="Comments" type="text" placeholder="Comment" />
-          {/* <div className="text-sm">
-            <Input label="Due Date" type="date" placeholder="none" />
-          </div> */}
 
           <div className="pt-5">
             <Button
               button={"Add Developer"}
               customClass="bg-btgreen text-white text-sm rounded-lg w-fit px-5"
+              type="submit"
             />
           </div>
         </form>

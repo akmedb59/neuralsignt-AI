@@ -4,6 +4,7 @@ import Input from "./input";
 import Select from "react-select";
 import Button from "./button";
 import { IoClose } from "react-icons/io5";
+import { useForm, Controller } from "react-hook-form";
 
 const AddProjectModal = ({ modalIsOpen, closeModal }) => {
   // Modal Styles
@@ -51,6 +52,17 @@ const AddProjectModal = ({ modalIsOpen, closeModal }) => {
     }),
   };
 
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    closeModal();
+  };
+
   Modal.setAppElement("body");
   const [selectedOption, setSelectedOption] = useState(null);
   return (
@@ -71,19 +83,30 @@ const AddProjectModal = ({ modalIsOpen, closeModal }) => {
           <div className="pb-5 text-lg font-semibold">Project Details</div>
         </div>
 
-        <form className="w-[300px]">
+        <form className="w-[300px]" onSubmit={handleSubmit(onSubmit)}>
           <Input label="Title" type="text" placeholder="Enter Project Title" />
           <label htmlFor="categories" className="text-xs font-semibold">
             Project Domain
           </label>
-          <Select
-            defaultValue={selectedOption}
-            onChange={setSelectedOption}
-            options={mltoptions}
-            isMulti={true}
-            styles={optionsStyle}
-            className="mb-3 rounded-lg shadow-sm"
+          <Controller
+            name="selectedDomains"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <Select
+                {...field}
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={mltoptions}
+                isMulti={true}
+                styles={optionsStyle}
+                className="mb-3 rounded-lg shadow-sm"
+              />
+            )}
           />
+          {errors.selectedDomains && (
+            <p className="text-btpink text-xs">Please select at least one domain.</p>
+          )}
 
           <Input label="Client Name" type="text" placeholder="Client Name" />
           <div className="text-sm">
@@ -93,18 +116,32 @@ const AddProjectModal = ({ modalIsOpen, closeModal }) => {
           <label htmlFor="developers" className="text-xs font-semibold">
             Assign Developers
           </label>
-          <Select
-            defaultValue={selectedOption}
-            onChange={setSelectedOption}
-            options={mltoptions}
-            isMulti={true}
-            className="rounded-lg shadow-sm"
-            styles={optionsStyle}
+
+          <Controller
+            name="assignedDevelopers"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <Select
+                {...field}
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={mltoptions}
+                isMulti={true}
+                className="rounded-lg shadow-sm"
+                styles={optionsStyle}
+              />
+            )}
           />
+          {errors.assignedDevelopers && (
+            <p className="text-btpink text-xs">Please select at least one developer.</p>
+          )}
+
           <div className="pt-5">
             <Button
               button={"Add Project"}
               customClass="bg-btgreen text-white text-sm rounded-lg w-fit px-5"
+              type="submit"
             />
           </div>
         </form>
