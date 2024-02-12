@@ -4,7 +4,7 @@ import TaskCard from "./taskCard";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import ReactPaginate from "react-paginate";
 import { FaPlus } from "react-icons/fa6";
-const TasksPagination = ({ setmodalIsOpen, isAdmin }) => {
+const TasksPagination = ({ setmodalIsOpen, isAdmin, filter }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const totalCards = 20;
@@ -17,12 +17,31 @@ const TasksPagination = ({ setmodalIsOpen, isAdmin }) => {
     setCurrentPage(selectedPage);
   };
 
+  let tasks = Array.from({ length: totalCards }, (_, index) => ({
+    id: index,
+    date: new Date(), // assuming each task has a date
+  }));
+
+  if (filter === "newest") {
+    tasks.sort((a, b) => b.date - a.date);
+  } else if (filter === "oldest") {
+    tasks.sort((a, b) => a.date - b.date);
+  } else if (filter === "today") {
+    tasks = tasks.filter(
+      (task) =>
+        task.date.toISOString().slice(0, 10) ===
+        new Date().toISOString().slice(0, 10),
+    );
+  }
+
+  const taskCards = tasks
+    .slice(offset, offset + PER_PAGE)
+    .map((task) => <TaskCard key={task.id} />);
+
   return (
     <div className="py-10">
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {Array.from({ length: totalCards }, (_, index) => (
-          <TaskCard key={index} />
-        )).slice(offset, offset + PER_PAGE)}
+        {taskCards}
         {isAdmin ? (
           <div className="flex h-full w-full flex-col items-center justify-center gap-5 rounded-lg bg-white py-10 shadow">
             <div

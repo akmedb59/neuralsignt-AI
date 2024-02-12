@@ -32,7 +32,7 @@ const UsersListBreadCrumb = () => {
         </div>
         <div className="flex items-center  gap-5">
           <div className="flex items-center gap-5">
-            Sort By{" "}
+            Sort By
             <input
               type="date"
               className="appearance-none rounded-lg border border-gray-200 px-3 py-2 leading-tight text-gray-700 focus:border-transparent focus:outline-none "

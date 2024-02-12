@@ -2,10 +2,8 @@ import React from "react";
 import { MdOutlineAssignment } from "react-icons/md";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaNoteSticky } from "react-icons/fa6";
-import { BiMath } from "react-icons/bi";
-import { SiApachemaven } from "react-icons/si";
-import { FaUserAstronaut } from "react-icons/fa";
 import ProjectCategory from "../../common/projectCategory";
+import Link from "next/link";
 
 const ActiveAssignments = () => {
   const tableheader = [
@@ -102,7 +100,7 @@ const ActiveAssignments = () => {
               </div>
             </div>
             <div className="flex items-center gap-2 font-semibold text-blue-700">
-              <div className="whitespace-nowrap">View all</div>
+              <Link href={"/user/tasks"} className="whitespace-nowrap">View all</Link>
               <div className="text-lg">
                 <FaLongArrowAltRight />
               </div>

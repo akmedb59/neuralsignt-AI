@@ -34,17 +34,6 @@ const Page = () => {
               </div>
             </div>
           </div>
-          {/* <div className="grid-cols-3 gap-4 space-y-5 sm:grid sm:space-y-0">
-            <div>
-              <PercentageCard achieved={30} dataType={"Pending Tasks"} />
-            </div>
-            <div>
-              <PercentageCard achieved={70} dataType={"Completed Tasks"} />
-            </div>
-            <div>
-              <PercentageCard achieved={85} dataType={"Approved Tasks"} />
-            </div>
-          </div> */}
           <div>
             <ActiveAssignments />
           </div>
