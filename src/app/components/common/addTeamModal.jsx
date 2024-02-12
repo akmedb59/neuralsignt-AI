@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import Input from "../../common/input";
+import Input from "./input";
 import Select from "react-select";
-import Button from "../../common/button";
+import Button from "./button";
 import { IoClose } from "react-icons/io5";
 
-const AddProjectModal = ({ modalIsOpen, closeModal }) => {
+const AddTeamModal = ({ modalIsOpen, closeModal }) => {
   // Modal Styles
   const customStyles = {
     content: {
@@ -68,13 +68,13 @@ const AddProjectModal = ({ modalIsOpen, closeModal }) => {
               <IoClose />
             </button>
           </div>
-          <div className="pb-5 text-lg font-semibold">Project Details</div>
+          <div className="pb-5 text-lg font-semibold">Team Details</div>
         </div>
 
         <form className="w-[300px]">
-          <Input label="Title" type="text" placeholder="Enter Project Title" />
+          <Input label="Title" type="text" placeholder="Enter Team Title" />
           <label htmlFor="categories" className="text-xs font-semibold">
-            Project Domain
+            Team Domain
           </label>
           <Select
             defaultValue={selectedOption}
@@ -84,14 +84,8 @@ const AddProjectModal = ({ modalIsOpen, closeModal }) => {
             styles={optionsStyle}
             className="mb-3 rounded-lg shadow-sm"
           />
-
-          <Input label="Client Name" type="text" placeholder="Client Name" />
-          <div className="text-sm">
-            <Input label="Due Date" type="date" placeholder="none" />
-          </div>
-
           <label htmlFor="developers" className="text-xs font-semibold">
-            Assign Developers
+            Add Developers
           </label>
           <Select
             defaultValue={selectedOption}
@@ -103,7 +97,7 @@ const AddProjectModal = ({ modalIsOpen, closeModal }) => {
           />
           <div className="pt-5">
             <Button
-              button={"Add Project"}
+              button={"Add Team"}
               customClass="bg-btgreen text-white text-sm rounded-lg w-fit px-5"
             />
           </div>
@@ -113,4 +107,4 @@ const AddProjectModal = ({ modalIsOpen, closeModal }) => {
   );
 };
 
-export default AddProjectModal;
+export default AddTeamModal;

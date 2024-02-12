@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import Input from "../../common/input";
+import Input from "./input";
 import Select from "react-select";
-import Button from "../../common/button";
+import Button from "./button";
 import { IoClose } from "react-icons/io5";
 
 const AddDeveloperModal = ({ modalIsOpen, closeModal }) => {

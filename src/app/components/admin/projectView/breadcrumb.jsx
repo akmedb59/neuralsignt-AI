@@ -9,7 +9,7 @@ import { MdOutlineTableRows } from "react-icons/md";
 import { FaTableCellsLarge } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoFilterSharp } from "react-icons/io5";
-import AddDeveloperModal from "./addDeveloperModal";
+import AddDeveloperModal from "../../common/addDeveloperModal";
 
 const Breadcrumb = () => {
   const [addModalIsOpen, setAddModalIsOpen] = useState(false);

@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Column from "./column";
 import ProjectCard from "./projectCard";
 import { projects } from "../../common/tempdata";
-import ProjectDetailsModal from "./projectDetailsModal";
-import AddProjectModal from "./addProjectModal";
+import ProjectDetailsModal from "../../common/projectDetailsModal";
+import AddProjectModal from "../../common/addProjectModal";
 
 import {
   DndContext,

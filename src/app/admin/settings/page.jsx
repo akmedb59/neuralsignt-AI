@@ -10,7 +10,7 @@ const Page = () => {
 
  
   return (
-    <div className="px-20">
+    <div className="px-20 bg-bggrey">
       <div className="flex items-center justify-between py-5">
         <div className="flex items-center gap-3">
           <div className="rounded-full bg-btpurple p-1.5 text-2xl text-white">
@@ -18,7 +18,7 @@ const Page = () => {
           </div>
           <div className="text-xl font-bold text-btpurple">Settings</div>
         </div>
-        <Searchbox placeholder="Search settings" />
+        {/* <Searchbox placeholder="Search settings" /> */}
       </div>
       <div className="flex items-center gap-10 border-b text-sm font-semibold">
         <div
