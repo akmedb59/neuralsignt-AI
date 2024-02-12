@@ -6,7 +6,7 @@ const DropDown = ({
   options = ["option1", "option2", "option3"],
 }) => {
   return (
-    <div className="w-full min-w-fit py-1">
+    <div className="flex w-full min-w-fit flex-col gap-1 py-1">
       <label
         htmlFor="genderselect"
         className="flex justify-between text-xs font-semibold capitalize"

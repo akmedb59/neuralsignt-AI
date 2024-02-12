@@ -4,10 +4,11 @@ import MemberSettings from "@/app/components/admin/settings/profileEdit/memberSe
 import Searchbox from "@/app/components/common/searchbox";
 import React, { useState } from "react";
 import { IoMdSettings } from "react-icons/io";
-import { IoSearch } from "react-icons/io5";
+
 const Page = () => {
   const [activeTab, setActiveTab] = useState("personal");
 
+ 
   return (
     <div className="px-20">
       <div className="flex items-center justify-between py-5">

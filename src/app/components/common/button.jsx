@@ -8,7 +8,7 @@ const Button = ({button="Button",action, customClass="text-white bg-black "}) =>
         " w-56 cursor-pointer rounded-full py-3 text-center text-sm font-semibold hover:bg-opacity-90"
       }
     >
-      <button className="z-50">{button}</button>
+      <button type={action} className="z-50">{button}</button>
     </div>
   );
 }

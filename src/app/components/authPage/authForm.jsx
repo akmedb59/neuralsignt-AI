@@ -7,7 +7,7 @@ import { FaMicrosoft } from "react-icons/fa6";
 import { FaApple } from "react-icons/fa";
 // import '../common/custom.css'
 import { useForm } from 'react-hook-form';
-import { regVal, loginVal } from './formValidationSchema.js';
+import { regVal, loginVal } from '../common/formValidationSchema.js';
 import { yupResolver } from "@hookform/resolvers/yup"
 
 const socialIcons = [
