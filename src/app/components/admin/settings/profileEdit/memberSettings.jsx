@@ -100,7 +100,7 @@ const MemberSettings = () => {
             <CheckBox label={"Email Notification"} />
             <CheckBox label={"Private Account"} />
 
-            <Button action={"submit"} />
+            <Button action={"submit"} button="Update"/>
           </div>
         </div>
       </form>

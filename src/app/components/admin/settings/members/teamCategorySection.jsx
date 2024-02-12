@@ -1,8 +1,18 @@
 import React from "react";
 import Button from "../../../common/button";
 import MembersList from "./membersList";
+import { CSVLink } from "react-csv";
+
 
 const TeamCategorySection = () => {
+  const csvData = [
+    ["firstname", "lastname", "email"],
+    ["Ahmed", "Tomi", "ah@smthing.co.com"],
+    ["Raed", "Labes", "rl@smthing.co.com"],
+    ["Yezzi", "Min l3b", "ymin@cocococo.com"],
+  ];
+
+  
   return (
     <div className="flex flex-col items-start justify-between gap-5 border-b py-8 md:flex-row lg:gap-10">
       <div className="w-1/3 space-y-5">
@@ -14,10 +24,13 @@ const TeamCategorySection = () => {
           voluptates dolorum repellendus distinctio rerum quae assumenda sint?
         </p>
         <div className="flex items-center gap-5">
-          <Button
-            button={"Download CSV ->"}
-            customClass=" bg-bggrey text-bgdark-grey"
-          />
+          <CSVLink data={csvData}>
+            <Button
+              button={"Download CSV ->"}
+              customClass=" bg-bggrey text-bgdark-grey"
+            />
+          </CSVLink>
+
           <Button
             button={"Invite New Member"}
             customClass=" bg-btgreen text-white"

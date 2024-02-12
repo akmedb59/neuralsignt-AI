@@ -6,6 +6,7 @@ const Searchbox = ({placeholder}) => {
       <IoSearch />
 
       <input
+      
         type="text"
         className="bg-transparent pl-3 outline-none"
         placeholder={placeholder}

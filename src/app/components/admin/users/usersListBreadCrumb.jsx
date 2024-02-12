@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Button from "../../common/button";
 import UserStatusIcon from "./userStatusIcon";
@@ -6,7 +7,15 @@ import Searchbox from "../../common/searchbox";
 import DropDown from "../../common/dropDown";
 import { TbTableOptions } from "react-icons/tb";
 import { FaBars } from "react-icons/fa";
+import { CSVLink } from "react-csv";
+
 const UsersListBreadCrumb = () => {
+  const csvData = [
+    ["firstname", "lastname", "email"],
+    ["Ahmed", "Tomi", "ah@smthing.co.com"],
+    ["Raed", "Labes", "rl@smthing.co.com"],
+    ["Yezzi", "Min l3b", "ymin@cocococo.com"],
+  ];
   return (
     <div>
       <div className="flex flex-col items-center justify-between gap-5 md:flex-row">
@@ -17,7 +26,10 @@ const UsersListBreadCrumb = () => {
           <UserStatusIcon title="Active" icon={<FaPaperclip />} number="200" />
         </div>
         <div className="flex flex-col items-center gap-5 md:flex-row">
-          <Button button="Register time away" />
+          <CSVLink data={csvData}>
+            <Button button="Download CSV" />
+          </CSVLink>
+         
           <Button
             button="Add new employee"
             customClass="bg-btpurple text-white "
@@ -25,9 +37,10 @@ const UsersListBreadCrumb = () => {
         </div>
       </div>
       <hr className="my-5" />
-      <div className="flex flex-col items-center justify-between gap-5 rounded-lg bg-btpurple bg-opacity-10 px-3 py-5 md:py-2 md:flex-row">
+      <div className="flex flex-col items-center justify-between gap-5 rounded-lg bg-btpurple bg-opacity-10 px-3 py-5 md:flex-row md:py-2">
         <div className="flex flex-col items-center gap-5 md:flex-row">
-          <Searchbox placeholder="Search users" />
+          <Searchbox placeholder="Search users" 
+          />
           <DropDown placeholder="Position" />
         </div>
         <div className="flex items-center  gap-5">
