@@ -8,6 +8,8 @@ const UserDetailCard = ({
   img = "/1.webp",
   name = "John Doe",
   post = "Web Developer",
+  number = 3526484645345,
+  email = "example@email.com",
 }) => {
   return (
     <div className="cursor-pointer rounded-lg bg-btpurple bg-opacity-10 p-2 hover:bg-opacity-5">
@@ -22,16 +24,15 @@ const UserDetailCard = ({
           src={img}
           width={100}
           height={100}
+          alt="user"
           className="aspect-square rounded-full object-cover"
         />
         <div className="font-bold">{name}</div>
         <div className="rounded-full bg-btpurple bg-opacity-15 px-3 py-1 text-xs font-semibold text-btpurple">
           {post}
         </div>
-        <div className="text-sm font-semibold text-bgdark-grey">
-          3526484645345
-        </div>
-        <div className="text-sm font-bold text-btpurple">example@email.com</div>
+        <div className="text-sm font-semibold text-bgdark-grey">{number}</div>
+        <div className="text-sm font-bold text-btpurple">{email}</div>
       </div>
     </div>
   );

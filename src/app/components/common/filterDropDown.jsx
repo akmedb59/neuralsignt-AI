@@ -1,37 +1,35 @@
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
-const DropDown = ({
+const FilterDropDown = ({
   label,
-  placeholder,
+  placeholder='Select Filter',
   options = ["option1", "option2", "option3"],
-  register,
-  name,
-  err = "none",
+  name='filter',
+  setFilter,
 }) => {
   return (
     <div className="flex w-full min-w-fit flex-col gap-1 py-1">
       <label
-        htmlFor="genderselect"
+        htmlFor={name}
         className="flex justify-between text-xs font-semibold capitalize"
       >
         {label}
       </label>
       <div className="relative">
-        <select 
+        <select
+          onChange={(e) => setFilter(e.target.value)}
           name={name ? name : "selectOption"}
-          {...(register ? register(name) : null)}
           id=""
           className={
-            "w-full appearance-none rounded-lg border border-gray-200 px-2 py-3 pr-8 text-sm text-gray-400 outline-none " +
-            (err && err[name] ? "border-none outline-btpink" : "")
+            "w-full appearance-none rounded-lg border border-gray-200 px-2 py-3 pr-8 text-sm text-gray-400 outline-none "
           }
           defaultValue={placeholder}
         >
-          <option value={placeholder} disabled>
+          <option value={placeholder.toLowerCase().replace(/\s/g, "")}>
             {placeholder}
           </option>
           {options.map((option, index) => (
-            <option key={index} value={option}>
+            <option key={index} value={option.toLowerCase().replace(/\s/g, "")}>
               {option}
             </option>
           ))}
@@ -44,4 +42,4 @@ const DropDown = ({
   );
 };
 
-export default DropDown;
+export default FilterDropDown;
