@@ -4,10 +4,11 @@ import TaskCard from "./taskCard";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import ReactPaginate from "react-paginate";
 import { FaPlus } from "react-icons/fa6";
+import { tempTasksData } from "./tempDataTasks";
 const TasksPagination = ({ setmodalIsOpen, isAdmin, filter }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
-  const totalCards = 20;
+  const totalCards = 10;
   const PER_PAGE = isAdmin ? 5 : 6;
   const offset = currentPage * PER_PAGE;
 
@@ -17,26 +18,21 @@ const TasksPagination = ({ setmodalIsOpen, isAdmin, filter }) => {
     setCurrentPage(selectedPage);
   };
 
-  let tasks = Array.from({ length: totalCards }, (_, index) => ({
-    id: index,
-    date: new Date(), // assuming each task has a date
-  }));
+  let tasks = tempTasksData;
 
   if (filter === "newest") {
-    tasks.sort((a, b) => b.date - a.date);
+    tasks.sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate));
   } else if (filter === "oldest") {
-    tasks.sort((a, b) => a.date - b.date);
+    tasks.sort((a, b) => new Date(a.addedDate) - new Date(b.addedDate));
   } else if (filter === "today") {
-    tasks = tasks.filter(
-      (task) =>
-        task.date.toISOString().slice(0, 10) ===
-        new Date().toISOString().slice(0, 10),
-    );
+    const today = new Date().toISOString().slice(0, 10);
+    tasks = tasks.filter((task) => task.dueDate.slice(0, 10) === today);
+  } else if (filter === "all") {
+    tasks = tempTasksData;
   }
-
   const taskCards = tasks
     .slice(offset, offset + PER_PAGE)
-    .map((task) => <TaskCard key={task.id} />);
+    .map((task) => <TaskCard key={task.id} title={task.title} />);
 
   return (
     <div className="py-10">

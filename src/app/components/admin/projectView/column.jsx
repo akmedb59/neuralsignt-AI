@@ -38,13 +38,13 @@ const Column = ({
   // };
   return (
     <div
-      // {...attributes}
+      {...attributes}
       ref={setNodeRef}
       style={{
         transition,
         transform: CSS.Translate.toString(transform),
       }}
-      className="flex w-full cursor-default flex-col gap-5 rounded-lg border bg-white"
+      className="flex w-full cursor-default flex-col gap-5 rounded-lg border bg-white "
     >
       <div
         // {...listeners}
@@ -64,13 +64,13 @@ const Column = ({
       {/* {openButton} */}
       <div className="w-full p-5">
         <button
-          onClick={()=>openModal(true)}
+          onClick={() => openModal(true)}
           className="flex w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-btpurple bg-purple-50 py-3 text-btpurple"
         >
           <FaPlus />
         </button>
       </div>
-      <div className="mx-5 mb-5">{children}</div>
+      <div className="z-50 mx-5 mb-5 min-h-96">{children}</div>
     </div>
   );
 };

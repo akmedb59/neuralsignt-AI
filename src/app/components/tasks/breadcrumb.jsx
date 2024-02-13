@@ -37,13 +37,19 @@ const Breadcrumb = ({ setmodalIsOpen, isAdmin, setFilter }) => {
               <div className="absolute right-0 top-full z-50 w-fit space-y-2 rounded-lg border bg-white p-3 text-sm ">
                 <div
                   className="cursor-pointer whitespace-nowrap border-b hover:opacity-40"
+                  onClick={() => setFilter("all")}
+                >
+                  All
+                </div>
+                <div
+                  className="cursor-pointer whitespace-nowrap border-b hover:opacity-40"
                   onClick={() => setFilter("newest")}
                 >
                   Newest First
                 </div>
                 <div
                   className="cursor-pointer border-b hover:opacity-40"
-                  onClick={() => setFilter("oldes")}
+                  onClick={() => setFilter("oldest")}
                 >
                   Oldest First
                 </div>

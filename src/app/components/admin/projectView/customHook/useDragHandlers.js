@@ -21,6 +21,7 @@ const handleDragStart = (
   const { active } = event;
   const { id } = active;
   setActiveId(id);
+  console.log("active", id);
 };
 
 // handle project drag move
@@ -32,6 +33,7 @@ const handleDragMove = (
   setActiveId,
 ) => {
   const { active, over } = event;
+  console.log("active", active.id, "over", over?.id);
 
   // Handle Items Sorting
   if (
@@ -45,6 +47,8 @@ const handleDragMove = (
     const activeContainer = findValueOfItems(active.id, "item", containers);
     const overContainer = findValueOfItems(over.id, "item", containers);
 
+    console.log("activeContainer", activeContainer);
+    console.log("overContainer", overContainer);
     // If the active or over container is not found, return
     if (!activeContainer || !overContainer) return;
 
@@ -97,6 +101,8 @@ const handleDragMove = (
     over &&
     active.id !== over.id
   ) {
+
+    console.log("active", active.id, "over", over?.id);
     // Find the active and over container
     const activeContainer = findValueOfItems(active.id, "item", containers);
     const overContainer = findValueOfItems(over.id, "container", containers);

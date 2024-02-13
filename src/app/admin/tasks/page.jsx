@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Breadcrumb from "@/app/components/tasks/breadcrumb";
 import AddTasksModal from "@/app/components/tasks/addTasksModal";
 import TasksPagination from "@/app/components/tasks/tasksPagination";
@@ -9,6 +9,9 @@ const Page = () => {
     setmodalIsOpen(false);
   };
   const [filter, setFilter] = useState("all");
+  useEffect(() => {
+    console.log("Filter: ", filter);
+  }, [filter]);
   return (
     <div className="h-full min-h-screen w-full bg-bggrey">
       <AddTasksModal modalIsOpen={modalIsOpen} closeModal={closeModal} />
@@ -18,7 +21,11 @@ const Page = () => {
           isAdmin={true}
           setFilter={setFilter}
         />
-        <TasksPagination setmodalIsOpen={setmodalIsOpen} isAdmin={true} />
+        <TasksPagination
+          setmodalIsOpen={setmodalIsOpen}
+          isAdmin={true}
+          filter={filter}
+        />
       </div>
     </div>
   );
