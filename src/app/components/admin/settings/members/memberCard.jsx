@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import Link from "next/link";
-const MemberCard = () => {
+const MemberCard = ({ data }) => {
   return (
     <tr className="border-b text-xs">
       <td className="flex items-center gap-3 py-3">
@@ -16,8 +16,8 @@ const MemberCard = () => {
           />
         </div>
         <div>
-          <p className="text-sm font-bold">Person Name</p>
-          <p className=" font-light">email@example.com</p>
+          <p className="text-sm font-bold">{data.name}</p>
+          <p className=" font-light">{data.email}</p>
         </div>
       </td>
       <td>12/12/2021</td>

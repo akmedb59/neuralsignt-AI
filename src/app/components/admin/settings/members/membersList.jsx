@@ -1,6 +1,6 @@
 import React from "react";
 import MemberCard from "./memberCard";
-
+import { usersListData } from "./tempDataMembers";
 const MembersList = () => {
   return (
     <div className="rounded-lg bg-bggrey p-5">
@@ -13,10 +13,9 @@ const MembersList = () => {
           </tr>
         </thead>
         <tbody>
-          <MemberCard />
-          <MemberCard />
-          <MemberCard />
-          <MemberCard />
+          {usersListData.map((data, index) => (
+            <MemberCard key={index} data={data} />
+          ))}
         </tbody>
       </table>
     </div>

@@ -4,15 +4,8 @@ import Button from "../../../common/button";
 import MembersList from "./membersList";
 import { CSVLink } from "react-csv";
 import AddDeveloperModal from "@/app/components/common/addDeveloperModal";
-
+import { usersListData } from "./tempDataMembers";
 const TeamCategorySection = () => {
-  const csvData = [
-    ["firstname", "lastname", "email"],
-    ["Ahmed", "Tomi", "ah@smthing.co.com"],
-    ["Raed", "Labes", "rl@smthing.co.com"],
-    ["Yezzi", "Min l3b", "ymin@cocococo.com"],
-  ];
-
   const [addModalIsOpen, setIsAddOpen] = useState(false);
   function closeModal() {
     setIsAddOpen(false);
@@ -30,7 +23,7 @@ const TeamCategorySection = () => {
         </p>
         <div className="flex items-center gap-5">
           <CSVLink
-            data={csvData}
+            data={usersListData}
             className="cursor-pointer whitespace-nowrap rounded-full bg-btgreen px-5 py-3 text-center  text-sm font-semibold text-white hover:bg-opacity-90"
           >
             Download CSV

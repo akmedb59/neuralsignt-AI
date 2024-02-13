@@ -1,14 +1,14 @@
-import React from 'react'
-import TeamCategorySection from './teamCategorySection'
+import React from "react";
+import TeamCategorySection from "./teamCategorySection";
 
 const CategoriesList = () => {
   return (
     <div>
       <TeamCategorySection />
-      <TeamCategorySection />
-      <TeamCategorySection />
+      {/* <TeamCategorySection /> */}
+      {/* <TeamCategorySection /> */}
     </div>
   );
-}
+};
 
-export default CategoriesList
+export default CategoriesList;
