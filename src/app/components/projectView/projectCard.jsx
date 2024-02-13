@@ -4,7 +4,7 @@ import { IoCalendarOutline } from "react-icons/io5";
 import Image from "next/image";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import ProjectCategory from "../../common/projectCategory";
+import ProjectCategory from "../common/projectCategory";
 import Modal from "react-modal";
 import { BsThreeDots } from "react-icons/bs";
 

@@ -9,7 +9,7 @@ const Page = () => {
     <>
       <Header />
       <div className="bg-gray-50">
-        <Breadcrumb isAdmin={true} />
+        <Breadcrumb />
         <ProjectBoard />
       </div>
     </>

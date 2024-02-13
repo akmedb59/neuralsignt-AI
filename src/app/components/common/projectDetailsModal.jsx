@@ -8,8 +8,8 @@ import { BsEmojiSmile } from "react-icons/bs";
 import { BsThreeDots } from "react-icons/bs";
 import { FaAnglesRight } from "react-icons/fa6";
 import { FaRegClock } from "react-icons/fa";
-import ProjectDetailsComments from "../admin/projectView/projectDetailsComments";
-import ProjectDescription from "../admin/projectView/projectDescription";
+import ProjectDetailsComments from "../projectView/projectDetailsComments";
+import ProjectDescription from "../projectView/projectDescription";
 const ProjectDetailsModal = ({ modalIsOpen, closeModal }) => {
   // Modal Styles
   const customStyles = {

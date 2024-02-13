@@ -70,7 +70,7 @@ const Column = ({
           <FaPlus />
         </button>
       </div>
-      <div className="z-50 mx-5 mb-5 min-h-96">{children}</div>
+      <div className="mx-5 mb-5">{children}</div>
     </div>
   );
 };

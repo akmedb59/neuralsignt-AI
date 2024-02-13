@@ -1,17 +1,17 @@
 "use client";
 import React, { useState } from "react";
 import { GrNext } from "react-icons/gr";
-import ProfilesArray from "../../common/profilesArray";
-import { profiles } from "../../common/tempdata";
-import Button from "../../common/button";
+import ProfilesArray from "../common/profilesArray";
+import { profiles } from "../common/tempdata";
+import Button from "../common/button";
 import { VscLayoutSidebarLeftOff } from "react-icons/vsc";
 import { MdOutlineTableRows } from "react-icons/md";
 import { FaTableCellsLarge } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoFilterSharp } from "react-icons/io5";
-import AddDeveloperModal from "../../common/addDeveloperModal";
+import AddDeveloperModal from "../common/addDeveloperModal";
 
-const Breadcrumb = () => {
+const Breadcrumb = ({ isAdmin }) => {
   const [addModalIsOpen, setAddModalIsOpen] = useState(false);
 
   const closeModal = () => {
@@ -29,19 +29,21 @@ const Breadcrumb = () => {
           </span>
           BoardView
         </div>
-        <div className="flex flex-wrap items-center gap-2 space-y-5 sm:space-y-0">
-          <ProfilesArray
-            profiles={profiles.content}
-            showadd={false}
-            css={" h-12 w-12 bg-btyellow "}
-          />
-          <div onClick={() => setAddModalIsOpen(true)}>
-            <Button
-              button={"+ Add Member"}
-              customClass="bg-btpurple text-white text-sm rounded-lg w-fit px-5"
+        {isAdmin ? (
+          <div className="flex flex-wrap items-center gap-2 space-y-5 sm:space-y-0">
+            <ProfilesArray
+              profiles={profiles.content}
+              showadd={false}
+              css={" h-12 w-12 bg-btyellow "}
             />
+            <div onClick={() => setAddModalIsOpen(true)}>
+              <Button
+                button={"+ Add Member"}
+                customClass="bg-btpurple text-white text-sm rounded-lg w-fit px-5"
+              />
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
       <div className="flex flex-wrap items-center justify-between space-y-5 sm:space-y-0">
         <div className="flex items-center gap-10 text-lg ">

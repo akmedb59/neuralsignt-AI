@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import Column from "./column";
 import ProjectCard from "./projectCard";
-import { projects } from "../../common/tempdata";
-import ProjectDetailsModal from "../../common/projectDetailsModal";
-import AddProjectModal from "../../common/addProjectModal";
+import { projects } from "../common/tempdata";
+import ProjectDetailsModal from "../common/projectDetailsModal";
+import AddProjectModal from "../common/addProjectModal";
 
 import {
   DndContext,
@@ -21,7 +21,6 @@ import {
   // arrayMove, imported in custom hook
   sortableKeyboardCoordinates,
 } from "@dnd-kit/sortable";
-
 
 import {
   useDragHandlers,
